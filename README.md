@@ -43,25 +43,6 @@ This project builds a **Nigeria Development Index (NDI)** — a composite scorin
 
 ---
 
-## Charts
-
-### 1. Nigeria's Development Arc by Decade
-![Decade Composite](charts/chart1_decade_composite.png)
-
-### 2. Sector Trajectories (1960–2020s)
-![Sector Trajectories](charts/chart2_sector_trajectories.png)
-
-### 3. Presidential Composite Ranking
-![Presidential Ranking](charts/chart3_presidential_ranking.png)
-
-### 4. Sector Heatmap — Presidents
-![Heatmap](charts/chart4_heatmap.png)
-
-### 5. Presidential Radar Charts
-![Radar](charts/chart5_radar.png)
-
----
-
 ## The Six Sectors
 
 | Sector | Indicators | Weights |
@@ -98,6 +79,24 @@ This project builds a **Nigeria Development Index (NDI)** — a composite scorin
 
 ---
 
+## Challenges
+
+### Technical challenges:
+
+- Writing visualization code from scratch for the first time — particularly the radar chart, which required manual angle calculation using numpy.linspace and closing the polygon loop
+- Handling a wide-format dataset with 1,500+ rows and reshaping it to long format using pd.melt() before any analysis was possible
+- Designing a normalization strategy that works fairly across indicators with completely different units and scales
+- Deciding which indicators to invert — getting the direction of "good" wrong would corrupt every score silently
+- Identifying and fixing a Python string concatenation bug (missing comma) that caused two indicators to escape inversion undetected, producing subtly wrong scores across all decades
+
+### Methodological challenges:
+
+- Selecting 20 indicators from 1,500+ without cherry-picking — balancing data coverage, relevance, and avoiding redundancy
+- Assigning weights without a ground truth to validate against — every weight is a judgment call that shapes the final rankings
+- Deciding how to handle missing data for early decades without discarding those decades entirely
+- Accounting for the fact that some indicators (life expectancy, child mortality) move slowly over time regardless of who is governing
+
+---
 ## How to Run
 
 **Requirements**
