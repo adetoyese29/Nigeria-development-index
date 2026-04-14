@@ -150,5 +150,10 @@ Nigeria dataset downloaded from [databank.worldbank.org](https://databank.worldb
 
 ---
 
+**Read article on medium**
+https://medium.com/@toyeseadelowo/nigeria-development-index-2acf0703cb76
+
+---
+
 *Built with Python · pandas · matplotlib · seaborn*  
 *Author: Adelowo Kehinde Adetoyese · 2026*
